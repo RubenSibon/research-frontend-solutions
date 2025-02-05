@@ -1,0 +1,25 @@
+/**
+ * @license EUPL-1.2+
+ * Copyright Gemeente Amsterdam
+ */
+
+import { Icon } from "@amsterdam/design-system-react";
+import { ChevronLeftIcon } from "@amsterdam/design-system-react-icons";
+import { forwardRef } from "react";
+import type { AnchorHTMLAttributes, ForwardedRef } from "react";
+import Link from "next/link";
+
+import "./back-link.css";
+
+export type BackLinkProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "placeholder">;
+
+export const BackLink = forwardRef(
+  ({ children, className, href, ...otherProps }: BackLinkProps, ref: ForwardedRef<HTMLAnchorElement>) => (
+    <Link {...otherProps} className={`ams-back-link ${className}`} href={href} ref={ref}>
+      <Icon svg={ChevronLeftIcon} size="level-6" />
+      {children}
+    </Link>
+  )
+);
+
+BackLink.displayName = "BackLink";

@@ -1,0 +1,36 @@
+.ams-screen.ams-screen--amopis {
+  max-inline-size: initial; /* `Screen` doesn’t support stretching to the full width of the viewport. */
+}
+
+.amopis-app-grid {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  min-block-size: 100vh; /* We can’t propagate the `fullHeight` prop of `Screen`. */
+}
+
+.amopis-main-background {
+  background-color: var(--ams-color-neutral-grey1);
+  flex: auto;
+}
+
+.amopis-white-background {
+  background-color: var(--ams-color-primary-white);
+}
+
+.amopis-sidebar {
+  background-color: var(--ams-color-primary-blue);
+  display: flex;
+  flex-direction: column;
+  padding-block-start: calc(40px + 3 * var(--ams-grid-row-gap-md));
+  align-items: center;
+}
+
+@media (max-width: 1087px) {
+  .amopis-sidebar {
+    display: none;
+  }
+
+  .amopis-app-grid {
+    grid-template-columns: 1fr;
+  }
+}
