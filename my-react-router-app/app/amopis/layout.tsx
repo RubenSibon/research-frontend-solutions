@@ -1,6 +1,3 @@
-"use client";
-
-import { type ReactNode } from "react";
 import { Avatar, Column, Grid, Header, PageMenu, Screen, SkipLink } from "@amsterdam/design-system-react";
 
 import { Sidebar } from "./_components/SideBar/SideBar";
