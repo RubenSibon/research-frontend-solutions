@@ -35,5 +35,17 @@ export default [
     route("amsterdam/zoeken", "routes/amsterdam/zoeken.tsx"),
   ]),
 
-  // layout("signalen/layout.tsx", [route("signalen", "routes/signalen.tsx")]),
+  layout("signalen/layout.tsx", [
+    route("signalen", "routes/signalen/index.tsx"),
+    route("signalen/bedankt", "routes/signalen/bedankt.tsx"),
+    route("signalen/contact-1", "routes/signalen/contact-1.tsx"),
+    route("signalen/contact-2", "routes/signalen/contact-2.tsx"),
+    route("signalen/documenten", "routes/signalen/documenten.tsx"),
+    route("signalen/samenvatting", "routes/signalen/samenvatting.tsx"),
+    route("signalen/vul-aan-1", "routes/signalen/vul-aan-1.tsx"),
+    route("signalen/vul-aan-1b", "routes/signalen/vul-aan-1b.tsx"),
+    route("signalen/vul-aan-1c", "routes/signalen/vul-aan-1c.tsx"),
+    route("signalen/vul-aan-2", "routes/signalen/vul-aan-2.tsx"),
+    route("signalen/vul-aan-3", "routes/signalen/vul-aan-3.tsx"),
+  ]),
 ] satisfies RouteConfig;
