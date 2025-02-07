@@ -1,6 +1,6 @@
 import { MetaFunction } from "@remix-run/react";
 
-import Welcome from "~/welcome/welcome";
+import CollegeVanBurgemeesterEnWethouders from "~/amsterdam/bestuur-en-organisatie/college-van-burgemeester-en-wethouders";
 
 import { docTitle } from "~/constants";
 
@@ -8,6 +8,6 @@ export const meta: MetaFunction = () => {
   return [{ title: docTitle }, { name: "description", content: "Amsterdam Design System" }];
 };
 
-export default function Home() {
-  return <Welcome />;
+export default function AmsterdamRoute() {
+  return <CollegeVanBurgemeesterEnWethouders />;
 }
