@@ -14,14 +14,6 @@ import SuspensefulComponent from "./SuspensfulComponent";
 function KunstEnCultuur() {
   return (
     <>
-      <Grid paddingVertical="medium">
-        <Grid.Cell span="all">
-          <OldComponent />
-        </Grid.Cell>
-        <Grid.Cell span="all">
-          <SuspensefulComponent />
-        </Grid.Cell>
-      </Grid>
       <Grid>
         <Grid.Cell span="all">
           <Breadcrumb>
@@ -34,6 +26,12 @@ function KunstEnCultuur() {
       <Grid paddingBottom="medium">
         <Grid.Cell span="all">
           <PageHeading>Kunst en Cultuur</PageHeading>
+        </Grid.Cell>
+        <Grid.Cell span="all">
+          <OldComponent />
+        </Grid.Cell>
+        <Grid.Cell span="all">
+          <SuspensefulComponent />
         </Grid.Cell>
         <Grid.Cell span={{ narrow: 4, medium: 8, wide: 4 }}>
           <Paragraph size="large">

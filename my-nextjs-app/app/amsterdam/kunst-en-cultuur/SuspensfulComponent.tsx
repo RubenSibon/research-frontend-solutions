@@ -3,7 +3,7 @@ import { Suspense, use } from "react";
 
 const fetchData = async (): Promise<string> => {
   return new Promise((resolve) => {
-    setTimeout(() => resolve("Hello, React 19!"), 3000);
+    setTimeout(() => resolve("Data geladen na 5 seconden."), 5000);
   });
 };
 
@@ -13,12 +13,12 @@ const DataComponent = () => <Paragraph>{use(resource)}</Paragraph>;
 
 function SuspensefulComponent() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <div>
-        <Heading>Concurrent rendering</Heading>
+    <>
+      <Heading level={2}>Concurrent rendering</Heading>
+      <Suspense fallback={<Paragraph>Loading...</Paragraph>}>
         <DataComponent />
-      </div>
-    </Suspense>
+      </Suspense>
+    </>
   );
 }
 
