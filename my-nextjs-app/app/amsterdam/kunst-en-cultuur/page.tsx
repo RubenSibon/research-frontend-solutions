@@ -10,6 +10,7 @@ import NextImage from "next/image";
 
 import artAndCultureImage from "../_assets/art-and-culture.jpg";
 import SuspensefulComponent from "./SuspensfulComponent";
+import ReadContextConditionally from "./ReadContextConditionally";
 
 function KunstEnCultuur() {
   return (
@@ -32,6 +33,9 @@ function KunstEnCultuur() {
         </Grid.Cell>
         <Grid.Cell span="all">
           <SuspensefulComponent />
+        </Grid.Cell>
+        <Grid.Cell span="all">
+          <ReadContextConditionally />
         </Grid.Cell>
         <Grid.Cell span={{ narrow: 4, medium: 8, wide: 4 }}>
           <Paragraph size="large">
