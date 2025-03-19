@@ -1,15 +1,23 @@
-'use client'
+"use client";
 
-import { Breadcrumb, Column, Grid, Heading, LinkList, PageHeading, Paragraph } from '@amsterdam/design-system-react'
-import { DownloadIcon } from '@amsterdam/design-system-react-icons'
-import NextLink from 'next/link'
-import NextImage from 'next/image'
+import React from "react";
 
-import artAndCultureImage from '../_assets/art-and-culture.jpg'
+import { Breadcrumb, Column, Grid, Heading, LinkList, PageHeading, Paragraph } from "@amsterdam/design-system-react";
+import { DownloadIcon } from "@amsterdam/design-system-react-icons";
+import { OldComponent } from "./OldComponent";
+import NextLink from "next/link";
+import NextImage from "next/image";
+
+import artAndCultureImage from "../_assets/art-and-culture.jpg";
 
 function KunstEnCultuur() {
   return (
     <>
+      <Grid paddingVertical="medium">
+        <Grid.Cell span="all">
+          <OldComponent />
+        </Grid.Cell>
+      </Grid>
       <Grid>
         <Grid.Cell span="all">
           <Breadcrumb>
@@ -109,7 +117,7 @@ function KunstEnCultuur() {
         </Grid.Cell>
       </Grid>
     </>
-  )
+  );
 }
 
-export default KunstEnCultuur
+export default KunstEnCultuur;
