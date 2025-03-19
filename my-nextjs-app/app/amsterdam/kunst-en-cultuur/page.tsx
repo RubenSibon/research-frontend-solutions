@@ -37,6 +37,16 @@ function KunstEnCultuur() {
         <Grid.Cell span="all">
           <ReadContextConditionally />
         </Grid.Cell>
+        <Grid.Cell span="all">
+          <ReadContextConditionally
+            heading="This component uses a Context as a Provider"
+            theme={{ color: "yellow", backgroundColor: "teal" }}
+          >
+            <Heading level={4} style={{ color: "inherit" }}>
+              <code>Context.Provider</code> will be deprecated at some point.
+            </Heading>
+          </ReadContextConditionally>
+        </Grid.Cell>
         <Grid.Cell span={{ narrow: 4, medium: 8, wide: 4 }}>
           <Paragraph size="large">
             Of u nu bewoner, bezoeker, kunstenaar of creatieveling bent: kunst en cultuur zijn overal om u heen in
