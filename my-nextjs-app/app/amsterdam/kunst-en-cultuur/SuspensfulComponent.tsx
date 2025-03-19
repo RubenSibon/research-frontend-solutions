@@ -1,3 +1,5 @@
+"use client";
+
 import { Heading, Paragraph } from "@amsterdam/design-system-react";
 import { Suspense, use } from "react";
 

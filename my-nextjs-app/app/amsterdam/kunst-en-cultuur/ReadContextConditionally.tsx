@@ -1,3 +1,5 @@
+"use client";
+
 import { createContext, ReactNode, use } from "react";
 
 import { Column, Heading, Paragraph } from "@amsterdam/design-system-react";
