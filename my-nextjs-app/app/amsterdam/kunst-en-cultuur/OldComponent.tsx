@@ -4,7 +4,7 @@ import React from "react";
 
 import { Heading, Paragraph } from "@amsterdam/design-system-react";
 
-export class OldComponent extends React.Component {
+class OldComponent extends React.Component {
   componentWillMount() {
     console.log("Deprecated lifecycle method");
   }
@@ -12,7 +12,7 @@ export class OldComponent extends React.Component {
   render() {
     return (
       <div>
-        <Heading>Ouderwets component</Heading>
+        <Heading>Old fashioned component</Heading>
         <Paragraph>
           Est officia aliqua proident qui ea pariatur id fugiat. Qui est officia elit qui aliquip pariatur ad
           exercitation cillum sint. Reprehenderit nostrud minim sit laboris. Et labore commodo dolor in anim culpa.

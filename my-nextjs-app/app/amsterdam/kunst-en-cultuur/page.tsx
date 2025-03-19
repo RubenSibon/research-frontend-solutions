@@ -4,11 +4,12 @@ import React from "react";
 
 import { Breadcrumb, Column, Grid, Heading, LinkList, PageHeading, Paragraph } from "@amsterdam/design-system-react";
 import { DownloadIcon } from "@amsterdam/design-system-react-icons";
-import { OldComponent } from "./OldComponent";
+import OldComponent from "./OldComponent";
 import NextLink from "next/link";
 import NextImage from "next/image";
 
 import artAndCultureImage from "../_assets/art-and-culture.jpg";
+import SuspensefulComponent from "./SuspensfulComponent";
 
 function KunstEnCultuur() {
   return (
@@ -16,6 +17,9 @@ function KunstEnCultuur() {
       <Grid paddingVertical="medium">
         <Grid.Cell span="all">
           <OldComponent />
+        </Grid.Cell>
+        <Grid.Cell span="all">
+          <SuspensefulComponent />
         </Grid.Cell>
       </Grid>
       <Grid>
