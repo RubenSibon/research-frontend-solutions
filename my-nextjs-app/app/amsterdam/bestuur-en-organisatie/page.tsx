@@ -6,6 +6,7 @@ import NextLink from "next/link";
 import FormBeforeActions from "./FormBeforeActions";
 import FormWithAction from "./FormWithAction";
 import FormWithTransition from "./FormWithTransition";
+import FormWithServerAction from "./FormWithServerAction";
 
 type SubsectionProps = {
   isEven: boolean;
@@ -90,6 +91,9 @@ export default function BestuurEnOrganisatie() {
         </Grid.Cell>
         <Grid.Cell span="all">
           <FormWithAction />
+        </Grid.Cell>
+        <Grid.Cell span="all">
+          <FormWithServerAction />
         </Grid.Cell>
       </Grid>
 
