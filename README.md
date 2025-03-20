@@ -1,4 +1,4 @@
-# Testing Amsterdam Design System with Reactt 19
+# Testing Amsterdam Design System with React 19
 
 The [Amsterdam Design System](https://github.com/Amsterdam/design-system) has been tested with:
 
