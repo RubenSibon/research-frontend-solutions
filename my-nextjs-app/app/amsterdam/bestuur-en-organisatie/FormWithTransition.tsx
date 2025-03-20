@@ -30,7 +30,7 @@ function FormWithTransition({}) {
 
   return (
     <Column>
-      <Heading level={2}>Form with Action and useActionState</Heading>
+      <Heading level={2}>Form with Action and useTransition</Heading>
 
       <form onSubmit={handleSubmit}>
         <Row>
