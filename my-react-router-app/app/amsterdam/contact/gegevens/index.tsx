@@ -13,28 +13,24 @@ import {
   Row,
   Select,
   TextInput,
-} from "@amsterdam/design-system-react";
-import { useNavigate } from "react-router";
-import { type FormEvent } from "react";
+} from '@amsterdam/design-system-react';
+import { type FormEvent } from 'react';
 
 function Question() {
-  const navigate = useNavigate();
-
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    navigate("/amsterdam/contact/bedankt");
   };
 
   return (
-    <Grid paddingBottom="medium">
+    <Grid paddingBottom="x-large">
       <Grid.Cell span={{ narrow: 4, medium: 6, wide: 8 }} start={{ narrow: 1, medium: 2, wide: 3 }}>
         <Breadcrumb>
           <Breadcrumb.Link href="/amsterdam">Home</Breadcrumb.Link>
         </Breadcrumb>
-        <form className="ams-gap--md" onSubmit={handleSubmit}>
-          <Heading>Contact</Heading>
+        <form className="ams-gap-l" onSubmit={handleSubmit}>
+          <Heading level={1}>Contact</Heading>
           <FieldSet aria-describedby="contactgegevensDescription" legend="Wat zijn uw contactgegevens?">
-            <Column gap="small">
+            <Column>
               <Paragraph id="contactgegevensDescription">
                 Wij hebben uw gegevens nodig om contact met u te kunnen opnemen.
               </Paragraph>
@@ -55,7 +51,7 @@ function Question() {
                   <Label htmlFor="country">Landnummer</Label>
                   <Select name="country">
                     <option value="+31">Nederland +31</option>
-                    <option value="+32">Belgie +32</option>
+                    <option value="+32">België +32</option>
                     <option value="+33">Frankrijk +33</option>
                   </Select>
                 </Field>
@@ -82,7 +78,7 @@ function Question() {
               </Field>
             </Column>
           </FieldSet>
-          <Alert severity="info">
+          <Alert heading="Wat doen we met uw gegevens?" headingLevel={2}>
             <Paragraph>
               We bewaren uw contactgegevens voor het afhandelen van uw vraag of klacht en het verbeteren van onze
               dienstverlening.
