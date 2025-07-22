@@ -1,16 +1,11 @@
-"use client";
+'use client'
 
-import React from "react";
+import { Breadcrumb, Column, Grid, Heading, LinkList, PageHeading, Paragraph } from '@amsterdam/design-system-react'
+import { DownloadIcon } from '@amsterdam/design-system-react-icons'
+import NextLink from 'next/link'
+import NextImage from 'next/image'
 
-import { Breadcrumb, Column, Grid, Heading, LinkList, PageHeading, Paragraph } from "@amsterdam/design-system-react";
-import { DownloadIcon } from "@amsterdam/design-system-react-icons";
-import OldComponent from "./OldComponent";
-import NextLink from "next/link";
-import NextImage from "next/image";
-
-import artAndCultureImage from "../_assets/art-and-culture.jpg";
-import SuspensefulComponent from "./SuspensfulComponent";
-import ReadContextConditionally from "./ReadContextConditionally";
+import artAndCultureImage from '../_assets/art-and-culture.jpg'
 
 function KunstEnCultuur() {
   return (
@@ -24,28 +19,9 @@ function KunstEnCultuur() {
           </Breadcrumb>
         </Grid.Cell>
       </Grid>
-      <Grid paddingBottom="medium">
+      <Grid paddingBottom="x-large">
         <Grid.Cell span="all">
           <PageHeading>Kunst en Cultuur</PageHeading>
-        </Grid.Cell>
-        <Grid.Cell span="all">
-          <OldComponent />
-        </Grid.Cell>
-        <Grid.Cell span="all">
-          <SuspensefulComponent />
-        </Grid.Cell>
-        <Grid.Cell span="all">
-          <ReadContextConditionally />
-        </Grid.Cell>
-        <Grid.Cell span="all">
-          <ReadContextConditionally
-            heading="This component uses a Context as a Provider"
-            theme={{ color: "yellow", backgroundColor: "teal" }}
-          >
-            <Heading level={4} style={{ color: "inherit" }}>
-              <code>Context.Provider</code> will be deprecated at some point.
-            </Heading>
-          </ReadContextConditionally>
         </Grid.Cell>
         <Grid.Cell span={{ narrow: 4, medium: 8, wide: 4 }}>
           <Paragraph size="large">
@@ -57,9 +33,9 @@ function KunstEnCultuur() {
           <NextImage alt="" className="ams-image" src={artAndCultureImage} />
         </Grid.Cell>
       </Grid>
-      <Grid paddingBottom="medium">
+      <Grid paddingBottom="x-large">
         <Grid.Cell span={4}>
-          <Heading level={3} className="ams-mb--xs">
+          <Heading level={3} className="ams-mb-s">
             Vaak gezocht
           </Heading>
           <LinkList>
@@ -70,10 +46,10 @@ function KunstEnCultuur() {
           </LinkList>
         </Grid.Cell>
         <Grid.Cell span={4} start={{ narrow: 1, medium: 1, wide: 5 }}>
-          <Heading level={2} size="level-3" className="ams-mb--xs">
+          <Heading level={2} size="level-3" className="ams-mb-xs">
             Wie Amsterdam zegt, zegt kunst en cultuur
           </Heading>
-          <Paragraph className="ams-mb--sm">
+          <Paragraph className="ams-mb-m">
             Van de musea en culturele broedplaatsen tot de stadsparken en de met kunst versierde gevels van de
             grachtenpanden. Kunst en cultuur is altijd en overal in Amsterdam. En het houdt niet op als de zon
             ondergaat: ook de clubscene is van culturele waarde voor de stad.
@@ -96,8 +72,8 @@ function KunstEnCultuur() {
             wide: 9,
           }}
         >
-          <Column gap="extra-large">
-            <Column gap="extra-small">
+          <Column gap="x-large">
+            <Column>
               <Heading level={2} size="level-3">
                 Archieven en collecties
               </Heading>
@@ -106,7 +82,7 @@ function KunstEnCultuur() {
                 <LinkList.Link href="#">Collectie van gemeente Amsterdam</LinkList.Link>
               </LinkList>
             </Column>
-            <Column gap="extra-small">
+            <Column>
               <Heading level={2} size="level-3">
                 Bekijk op de kaart
               </Heading>
@@ -116,7 +92,7 @@ function KunstEnCultuur() {
                 <LinkList.Link href="#">Archeologische vindplaatsen</LinkList.Link>
               </LinkList>
             </Column>
-            <Column gap="extra-small">
+            <Column>
               <Heading level={2} size="level-3">
                 Weesp
               </Heading>
@@ -133,7 +109,7 @@ function KunstEnCultuur() {
         </Grid.Cell>
       </Grid>
     </>
-  );
+  )
 }
 
-export default KunstEnCultuur;
+export default KunstEnCultuur

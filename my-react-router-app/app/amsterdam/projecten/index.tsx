@@ -7,10 +7,10 @@ import {
   Paragraph,
   Spotlight,
   TextInput,
-} from "@amsterdam/design-system-react";
+} from '@amsterdam/design-system-react';
 
-import constructionWorkImage from "../_assets/construction-work.jpg";
-import constructionWorkMapImage from "../_assets/construction-work-map.jpg";
+import constructionWorkImage from '../_assets/construction-work.jpg';
+import constructionWorkMapImage from '../_assets/construction-work-map.jpg';
 
 function Projecten() {
   return (
@@ -22,9 +22,11 @@ function Projecten() {
           </Breadcrumb>
         </Grid.Cell>
       </Grid>
-      <Grid gapVertical="small" paddingBottom="medium">
+      <Grid gapVertical="large" paddingBottom="x-large">
         <Grid.Cell span={{ narrow: 4, medium: 6, wide: 8 }}>
-          <Heading className="ams-mb--sm">Bouw- en verkeersprojecten</Heading>
+          <Heading level={1} className="ams-mb-m">
+            Bouw- en verkeersprojecten
+          </Heading>
           <Paragraph size="large">
             <strong>Overzicht van ruim 200 projecten in Amsterdam.</strong> Lees waar en wanneer we werken aan
             nieuwbouw, groot onderhoud, herinrichting van straten en wegen, aanpak van parken of ontwikkeling van hele
@@ -32,28 +34,30 @@ function Projecten() {
           </Paragraph>
         </Grid.Cell>
       </Grid>
-      <Grid paddingBottom="medium">
+      <Grid paddingBottom="x-large">
         <Grid.Cell span={{ narrow: 2, medium: 4, wide: 5 }} start={{ narrow: 1, medium: 1, wide: 3 }}>
-          <Heading level={2} size="level-4" className="ams-mb--xs">
+          <Heading level={2} size="level-4" className="ams-mb-s">
             Projecten per stadsdeel
           </Heading>
           <LinkList>
-            {["Centrum", "Nieuw-West", "Noord", "Oost", "Weesp", "West", "Zuid", "Zuidoost"].map((district) => (
-              <LinkList.Link href="/amsterdam/projecten/stadsdeel">{district}</LinkList.Link>
+            {['Centrum', 'Nieuw-West', 'Noord', 'Oost', 'Weesp', 'West', 'Zuid', 'Zuidoost'].map((district) => (
+              <LinkList.Link href="/amsterdam/projecten/stadsdeel" key={district}>
+                {district}
+              </LinkList.Link>
             ))}
           </LinkList>
         </Grid.Cell>
         <Grid.Cell span={{ narrow: 2, medium: 4, wide: 5 }}>
-          <Heading level={2} size="level-4" className="ams-mb--xs">
+          <Heading level={2} size="level-4" className="ams-mb-s">
             Zoek project
           </Heading>
           <TextInput />
         </Grid.Cell>
       </Grid>
       <Spotlight color="yellow">
-        <Grid paddingVertical="medium">
+        <Grid paddingVertical="x-large">
           <Grid.Cell span={3} start={{ narrow: 1, medium: 1, wide: 3 }}>
-            <Heading level={2} size="level-4" className="ams-mb--xs">
+            <Heading level={2} size="level-4" className="ams-mb-s">
               Kaart met bouwprojecten en verkeersprojecten
             </Heading>
             <Paragraph>Ga via de kaart naar meer informatie over het project dat u zoekt.</Paragraph>

@@ -1,7 +1,7 @@
 'use client'
 
 import { Breadcrumb, Card, Grid, Heading, LinkList, PageHeading, Paragraph } from '@amsterdam/design-system-react'
-import { ExternalLinkIcon } from '@amsterdam/design-system-react-icons'
+import { LinkExternalIcon } from '@amsterdam/design-system-react-icons'
 import NextImage from 'next/image'
 import type { StaticImageData } from 'next/image'
 import NextLink from 'next/link'
@@ -48,9 +48,9 @@ function NewsArticle({ date, description, image, tagline, title }: NewsArticlePr
       <Grid.Cell span={{ narrow: 4, medium: 5, wide: 6 }}>
         <Card>
           <Card.HeadingGroup tagline={tagline}>
-            <Heading level={3}>
+            <Card.Heading level={3}>
               <Card.Link href="#">{title}</Card.Link>
-            </Heading>
+            </Card.Heading>
           </Card.HeadingGroup>
           <Paragraph>{description}</Paragraph>
           <Paragraph size="small" style={{ color: '#474747' }}>
@@ -65,15 +65,17 @@ function NewsArticle({ date, description, image, tagline, title }: NewsArticlePr
 export default function Gemeenteraad() {
   return (
     <>
-      <Grid paddingBottom="medium">
+      <Grid paddingBottom="x-large">
         <Grid.Cell span={{ narrow: 4, medium: 6, wide: 7 }}>
           <Breadcrumb>
             <NextLink href="/amsterdam" legacyBehavior passHref>
               <Breadcrumb.Link>Home</Breadcrumb.Link>
             </NextLink>
-            <Breadcrumb.Link href="/amsterdam/bestuur-en-organisatie">Bestuur en Organisatie</Breadcrumb.Link>
+            <NextLink href="/amsterdam/bestuur-en-organisatie" legacyBehavior passHref>
+              <Breadcrumb.Link>Bestuur en Organisatie</Breadcrumb.Link>
+            </NextLink>
           </Breadcrumb>
-          <PageHeading className="ams-mb--sm">Gemeenteraad</PageHeading>
+          <PageHeading className="ams-mb-m">Gemeenteraad</PageHeading>
           <Paragraph size="large">
             De gemeenteraad is het hoogste bestuursorgaan van de stad. De raad bestaat uit 45 volksvertegenwoordigers
             van verschillende politieke groeperingen. De raadsleden worden elke 4 jaar gekozen door Amsterdammers bij de
@@ -81,26 +83,26 @@ export default function Gemeenteraad() {
           </Paragraph>
         </Grid.Cell>
       </Grid>
-      <NextImage alt="" className="ams-image ams-aspect-ratio--2x-wide" src={cityCouncilImage} />
-      <Grid paddingVertical="large" gapVertical="small">
+      <NextImage alt="" className="ams-image ams-aspect-ratio-16-5" src={cityCouncilImage} />
+      <Grid paddingVertical="2x-large" gapVertical="large">
         <Grid.Cell span={{ narrow: 4, medium: 4, wide: 5 }} start={1}>
-          <Heading className="ams-mb--xs" level={2}>
+          <Heading className="ams-mb-s" level={2}>
             Raadsinformatie
           </Heading>
-          <Paragraph className="ams-mb--xs">
+          <Paragraph className="ams-mb-s">
             Vergaderschema’s en stukken, beelden en uitslagen van vergaderingen.
           </Paragraph>
           <LinkList>
-            <LinkList.Link href="https://amsterdam.raadsinformatie.nl/" icon={ExternalLinkIcon}>
+            <LinkList.Link href="https://amsterdam.raadsinformatie.nl/" icon={LinkExternalIcon}>
               Bekijk op amsterdam.raadsinformatie.nl
             </LinkList.Link>
           </LinkList>
         </Grid.Cell>
         <Grid.Cell span={{ narrow: 4, medium: 4, wide: 5 }} start={{ narrow: 1, medium: 5, wide: 7 }}>
-          <Heading className="ams-mb--xs" level={2}>
+          <Heading className="ams-mb-s" level={2}>
             Raadsleden en fracties
           </Heading>
-          <Paragraph className="ams-mb--xs">
+          <Paragraph className="ams-mb-s">
             Welke politieke partijen zijn vertegenwoordigd in de raad? Wie zijn de raadsleden en wat doen zij?
           </Paragraph>
           <LinkList>
@@ -108,10 +110,10 @@ export default function Gemeenteraad() {
           </LinkList>
         </Grid.Cell>
         <Grid.Cell span={{ narrow: 4, medium: 4, wide: 5 }} start={1}>
-          <Heading className="ams-mb--xs" level={2}>
+          <Heading className="ams-mb-s" level={2}>
             Raadscommissies
           </Heading>
-          <Paragraph className="ams-mb--xs">
+          <Paragraph className="ams-mb-s">
             Wat is een raadscommissie, welke commissies zijn er en wie zitten erin? Aanmelden om in te spreken.
           </Paragraph>
           <LinkList>
@@ -119,10 +121,10 @@ export default function Gemeenteraad() {
           </LinkList>
         </Grid.Cell>
         <Grid.Cell span={{ narrow: 4, medium: 4, wide: 5 }} start={{ narrow: 1, medium: 5, wide: 7 }}>
-          <Heading className="ams-mb--xs" level={2}>
+          <Heading className="ams-mb-s" level={2}>
             Invloed uitoefenen
           </Heading>
-          <Paragraph className="ams-mb--xs">
+          <Paragraph className="ams-mb-s">
             Direct contact opnemen met een raadslid, inspreken bij een raadscommissie en meer.
           </Paragraph>
           <LinkList>
@@ -130,7 +132,7 @@ export default function Gemeenteraad() {
           </LinkList>
         </Grid.Cell>
         <Grid.Cell span={{ narrow: 4, medium: 4, wide: 5 }} start={1}>
-          <Heading className="ams-mb--xs" level={2}>
+          <Heading className="ams-mb-s" level={2}>
             Bestuursorganen
           </Heading>
           <LinkList>
@@ -140,7 +142,7 @@ export default function Gemeenteraad() {
           </LinkList>
         </Grid.Cell>
         <Grid.Cell span={{ narrow: 4, medium: 4, wide: 5 }} start={{ narrow: 1, medium: 5, wide: 7 }}>
-          <Heading className="ams-mb--xs" level={2}>
+          <Heading className="ams-mb-s" level={2}>
             Agenda’s en stukken
           </Heading>
           <LinkList>
@@ -150,7 +152,7 @@ export default function Gemeenteraad() {
           </LinkList>
         </Grid.Cell>
       </Grid>
-      <Grid paddingBottom="large">
+      <Grid paddingBottom="2x-large">
         <Grid.Cell span={{ narrow: 4, medium: 8, wide: 10 }} start={{ narrow: 1, medium: 1, wide: 2 }}>
           <Heading level={2}>Nieuws</Heading>
         </Grid.Cell>

@@ -3,76 +3,76 @@ import {
   Card,
   Grid,
   type GridColumnNumber,
-  Heading,
   Image,
+  Heading,
   PageHeading,
   Paragraph,
-} from "@amsterdam/design-system-react";
+} from '@amsterdam/design-system-react';
 
-import municipalExecutive from "../../_assets/municipal-executive.jpg";
-import municipalExecutiveDeJager from "../../_assets/municipal-executive-de-jager.jpg";
-import municipalExecutiveGrootWassink from "../../_assets/municipal-executive-groot-wassink.jpg";
-import municipalExecutiveHalsema from "../../_assets/municipal-executive-halsema.jpg";
-import municipalExecutiveMbarki from "../../_assets/municipal-executive-mbarki.jpg";
-import municipalExecutiveMeliani from "../../_assets/municipal-executive-meliani.jpg";
-import municipalExecutiveMoorman from "../../_assets/municipal-executive-moorman.jpg";
-import municipalExecutivePels from "../../_assets/municipal-executive-pels.jpg";
-import municipalExecutiveScholtes from "../../_assets/municipal-executive-scholtes.jpg";
-import municipalExecutiveTeesink from "../../_assets/municipal-executive-teesink.jpg";
-import municipalExecutiveVanBuren from "../../_assets/municipal-executive-van-buren.jpg";
-import municipalExecutiveVanDantzig from "../../_assets/municipal-executive-van-dantzig.jpg";
-import municipalExecutiveVanDerHorst from "../../_assets/municipal-executive-van-der-horst.jpg";
+import municipalExecutive from '../../_assets/municipal-executive.jpg';
+import municipalExecutiveDeJager from '../../_assets/municipal-executive-de-jager.jpg';
+import municipalExecutiveGrootWassink from '../../_assets/municipal-executive-groot-wassink.jpg';
+import municipalExecutiveHalsema from '../../_assets/municipal-executive-halsema.jpg';
+import municipalExecutiveMbarki from '../../_assets/municipal-executive-mbarki.jpg';
+import municipalExecutiveMeliani from '../../_assets/municipal-executive-meliani.jpg';
+import municipalExecutiveMoorman from '../../_assets/municipal-executive-moorman.jpg';
+import municipalExecutivePels from '../../_assets/municipal-executive-pels.jpg';
+import municipalExecutiveScholtes from '../../_assets/municipal-executive-scholtes.jpg';
+import municipalExecutiveTeesink from '../../_assets/municipal-executive-teesink.jpg';
+import municipalExecutiveVanBuren from '../../_assets/municipal-executive-van-buren.jpg';
+import municipalExecutiveVanDantzig from '../../_assets/municipal-executive-van-dantzig.jpg';
+import municipalExecutiveVanDerHorst from '../../_assets/municipal-executive-van-der-horst.jpg';
 
 const persons: Array<PersonProps> = [
   {
-    fullName: "Femke Halsema",
+    fullName: 'Femke Halsema',
     image: municipalExecutiveHalsema,
-    jobTitle: "Burgemeester",
+    jobTitle: 'Burgemeester',
   },
   {
-    fullName: "Marjolein Moorman",
+    fullName: 'Marjolein Moorman',
     image: municipalExecutiveMoorman,
   },
   {
-    fullName: "Rutger Groot Wassink",
+    fullName: 'Rutger Groot Wassink',
     image: municipalExecutiveGrootWassink,
   },
   {
-    fullName: "Reinier van Dantzig",
+    fullName: 'Reinier van Dantzig',
     image: municipalExecutiveVanDantzig,
   },
   {
-    fullName: "Sofyan Mbarki",
+    fullName: 'Sofyan Mbarki',
     image: municipalExecutiveMbarki,
   },
   {
-    fullName: "Touria Meliani",
+    fullName: 'Touria Meliani',
     image: municipalExecutiveMeliani,
   },
   {
-    fullName: "Melanie van der Horst",
+    fullName: 'Melanie van der Horst',
     image: municipalExecutiveVanDerHorst,
   },
   {
-    fullName: "Hester van Buren",
+    fullName: 'Hester van Buren',
     image: municipalExecutiveVanBuren,
   },
   {
-    fullName: "Zita Pels",
+    fullName: 'Zita Pels',
     image: municipalExecutivePels,
   },
   {
-    fullName: "Alexander Scholtes",
+    fullName: 'Alexander Scholtes',
     image: municipalExecutiveScholtes,
   },
   {
-    fullName: "Dirk de Jager",
+    fullName: 'Dirk de Jager',
     image: municipalExecutiveDeJager,
   },
   {
-    fullName: "Peter Teesink",
+    fullName: 'Peter Teesink',
     image: municipalExecutiveTeesink,
-    jobTitle: "Gemeentesecretaris",
+    jobTitle: 'Gemeentesecretaris',
   },
 ];
 
@@ -89,37 +89,37 @@ function PersonCardCell({ fullName, image, index, jobTitle }: PersonProps & { in
       start={{ narrow: 1, medium: index % 2 === 0 ? 2 : 5, wide: ((index % 4) * 3 + 1) as GridColumnNumber }}
     >
       <Card>
-        <Image alt="" className="ams-image" src={image} />
-        <Heading size="level-4">
+        <Image alt="" className="ams-image ams-card__image" src={image} />
+        <Card.Heading level={3} size="level-4">
           <Card.Link href="#">{fullName}</Card.Link>
-        </Heading>
-        <Paragraph>{jobTitle ?? "Wethouder"}</Paragraph>
+        </Card.Heading>
+        <Paragraph>{jobTitle ?? 'Wethouder'}</Paragraph>
       </Card>
     </Grid.Cell>
   );
 }
 
 PersonCardCell.defaultProps = {
-  jobTitle: "Wethouder",
+  jobTitle: 'Wethouder',
 };
 
 export default function CollegeVanBurgemeesterEnWethouders() {
   return (
     <>
-      <Grid paddingBottom="medium">
+      <Grid paddingBottom="x-large">
         <Grid.Cell span={{ narrow: 4, medium: 6, wide: 7 }}>
           <Breadcrumb>
             <Breadcrumb.Link href="/amsterdam">Home</Breadcrumb.Link>
             <Breadcrumb.Link href="/amsterdam/bestuur-en-organisatie">Bestuur en Organisatie</Breadcrumb.Link>
           </Breadcrumb>
-          <PageHeading className="ams-mb--sm">College van burgemeester en wethouders</PageHeading>
+          <PageHeading className="ams-mb-m">College van burgemeester en wethouders</PageHeading>
           <Paragraph size="large">Het dagelijks bestuur van onze gemeente uitgebreid in beeld.</Paragraph>
         </Grid.Cell>
       </Grid>
-      <Image alt="" className="ams-image ams-aspect-ratio--2x-wide" src={municipalExecutive} />
-      <Grid paddingVertical="large" gapVertical="small">
+      <Image alt="" className="ams-image ams-aspect-ratio-16-5" src={municipalExecutive} />
+      <Grid paddingVertical="2x-large" gapVertical="large">
         <Grid.Cell span={{ narrow: 4, medium: 6, wide: 12 }} start={{ narrow: 1, medium: 2, wide: 1 }}>
-          <Heading className="ams-mb--xs" level={2}>
+          <Heading className="ams-mb-s" level={2}>
             Burgemeester en wethouders
           </Heading>
         </Grid.Cell>

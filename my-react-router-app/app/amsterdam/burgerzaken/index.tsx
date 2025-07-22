@@ -1,77 +1,77 @@
-import { Breadcrumb, Column, Grid, Heading, LinkList, PageHeading } from "@amsterdam/design-system-react";
+import { Breadcrumb, Column, Grid, Heading, LinkList, PageHeading } from '@amsterdam/design-system-react';
 
 const linkSections = [
   [
     {
-      title: "Paspoort en identiteitskaart",
+      title: 'Paspoort en identiteitskaart',
       links: [
-        "Paspoort of identiteitskaart aanvragen",
-        "Zakenpaspoort aanvragen",
-        "Tweede paspoort aanvragen",
-        "Paspoort kwijt of gestolen",
+        'Paspoort of identiteitskaart aanvragen',
+        'Zakenpaspoort aanvragen',
+        'Tweede paspoort aanvragen',
+        'Paspoort kwijt of gestolen',
       ],
     },
     {
-      title: "Trouwen en Partnerschap",
-      links: ["Gratis, budget en standaard ceremonie", "Kosten", "Meer"],
+      title: 'Trouwen en Partnerschap',
+      links: ['Gratis, budget en standaard ceremonie', 'Kosten', 'Meer'],
     },
     {
-      title: "Akten, uittreksels en verklaringen",
-      links: ["Uittreksel BRP aanvragen", "Geboorteakte aanvragen", "Meer"],
+      title: 'Akten, uittreksels en verklaringen',
+      links: ['Uittreksel BRP aanvragen', 'Geboorteakte aanvragen', 'Meer'],
     },
     {
-      title: "Adres en inschrijving",
+      title: 'Adres en inschrijving',
       links: [
-        "Opnieuw inschrijven bij de gemeente",
-        "Onjuiste inschrijving melden",
-        "Onderzoek naar inschrijving Basisregistratie Personen (BRP)",
-        "Briefadres aanvragen en wijzigen",
+        'Opnieuw inschrijven bij de gemeente',
+        'Onjuiste inschrijving melden',
+        'Onderzoek naar inschrijving Basisregistratie Personen (BRP)',
+        'Briefadres aanvragen en wijzigen',
       ],
     },
     {
-      title: "Immigratie en naturalisatie",
+      title: 'Immigratie en naturalisatie',
       links: [
-        "Verhuizen naar Amsterdam vanuit het buitenland",
-        "Naturalisatie – Wat u moet doen om Nederlander te worden",
+        'Verhuizen naar Amsterdam vanuit het buitenland',
+        'Naturalisatie – Wat u moet doen om Nederlander te worden',
       ],
     },
   ],
   [
     {
-      title: "Rijbewijs",
+      title: 'Rijbewijs',
       links: [
-        "Rijbewijs aanvragen",
-        "Rijbewijs verlengen of categorie toevoegen",
-        "Rijbewijs kwijt of gestolen",
-        "Buitenlands rijbewijs omwisselen",
+        'Rijbewijs aanvragen',
+        'Rijbewijs verlengen of categorie toevoegen',
+        'Rijbewijs kwijt of gestolen',
+        'Buitenlands rijbewijs omwisselen',
       ],
     },
     {
-      title: "Verhuizen",
-      links: ["Verhuizing doorgeven"],
+      title: 'Verhuizen',
+      links: ['Verhuizing doorgeven'],
     },
     {
-      title: "Geboorte en erkenning kinderen",
-      links: ["Geboorteaangifte doen", "Kind erkennen", "Meer"],
+      title: 'Geboorte en erkenning kinderen',
+      links: ['Geboorteaangifte doen', 'Kind erkennen', 'Meer'],
     },
     {
-      title: "Persoonsgegevens",
+      title: 'Persoonsgegevens',
       links: [
-        "Inzien of wijzigen van uw gegevens",
-        "Wie mogen mijn persoonlijke gegevens opvragen?",
-        "Geheimhouding persoonsgegevens",
-        "Voor- of achternaam wijzigen",
-        "Wat te doen bij identiteitsfraude",
+        'Inzien of wijzigen van uw gegevens',
+        'Wie mogen mijn persoonlijke gegevens opvragen?',
+        'Geheimhouding persoonsgegevens',
+        'Voor- of achternaam wijzigen',
+        'Wat te doen bij identiteitsfraude',
       ],
     },
     {
-      title: "Overlijden",
+      title: 'Overlijden',
       links: [
-        "Aangifte van overlijden",
-        "Aangifte van overlijden door uitvaartondernemers",
-        "Aangifte van overlijden in het buitenland",
-        "Begraafplaatsen en crematoria",
-        "Uitvaarten door de gemeente",
+        'Aangifte van overlijden',
+        'Aangifte van overlijden door uitvaartondernemers',
+        'Aangifte van overlijden in het buitenland',
+        'Begraafplaatsen en crematoria',
+        'Uitvaarten door de gemeente',
       ],
     },
   ],
@@ -87,14 +87,14 @@ function Burgerzaken() {
           </Breadcrumb>
         </Grid.Cell>
       </Grid>
-      <Grid paddingBottom="medium">
+      <Grid paddingBottom="x-large">
         <Grid.Cell span="all">
           <PageHeading>Burgerzaken</PageHeading>
         </Grid.Cell>
         <Grid.Cell span={{ narrow: 4, medium: 4, wide: 5 }} start={{ narrow: 1, medium: 1, wide: 2 }}>
-          <Column gap="extra-large">
+          <Column gap="x-large">
             {linkSections[0].map(({ title, links }) => (
-              <Column as="section" gap="extra-small" key={title}>
+              <Column key={title}>
                 <Heading level={2} size="level-3">
                   {title}
                 </Heading>
@@ -110,9 +110,9 @@ function Burgerzaken() {
           </Column>
         </Grid.Cell>
         <Grid.Cell span={{ narrow: 4, medium: 4, wide: 5 }}>
-          <Column gap="extra-large">
+          <Column gap="x-large">
             {linkSections[1].map(({ title, links }) => (
-              <Column as="section" gap="extra-small" key={title}>
+              <Column key={title}>
                 <Heading level={2} size="level-3">
                   {title}
                 </Heading>

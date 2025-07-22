@@ -1,6 +1,14 @@
-'use client'
-
-import { Column, Grid, Heading, Link, LinkList, Page, PageFooter, Paragraph } from '@amsterdam/design-system-react'
+import {
+  Grid,
+  Heading,
+  Link,
+  LinkList,
+  Page,
+  PageFooter,
+  Paragraph,
+  PageHeader,
+  SkipLink,
+} from '@amsterdam/design-system-react';
 import {
   ClockIcon,
   FacebookIcon,
@@ -10,15 +18,39 @@ import {
   MastodonIcon,
   PhoneIcon,
   XIcon,
-} from '@amsterdam/design-system-react-icons'
-import NextLink from 'next/link'
-import './amsterdam.css'
+} from '@amsterdam/design-system-react-icons';
+import './amsterdam.css';
+import { Outlet } from 'react-router';
+
+const megaMenuLinks = [
+  { href: '#', label: 'Afval' },
+  { href: '/amsterdam/bestuur-en-organisatie', label: 'Bestuur en organisatie' },
+  { href: '/amsterdam/projecten', label: 'Bouw- en verkeersprojecten' },
+  { href: '/amsterdam/burgerzaken', label: 'Burgerzaken' },
+  { href: '#', label: 'Gemeentebelastingen' },
+  { href: '#', label: 'Gezondheidsdienst (GGD)' },
+  { href: '/amsterdam/kunst-en-cultuur', label: 'Kunst, cultuur en vrije tijd' },
+  { href: '#', label: 'Ondernemen' },
+  { href: '#', label: 'Onderwijs en jeugd' },
+  { href: '#', label: 'Parkeren' },
+  { href: '#', label: 'Sport' },
+  { href: '#', label: 'Stadsdelen' },
+  { href: '#', label: 'Subsidies' },
+  { href: '#', label: 'Vacatures' },
+  { href: '#', label: 'Vergunningen' },
+  { href: '#', label: 'Verkeer en vervoer' },
+  { href: '#', label: 'Verkiezingen' },
+  { href: '#', label: 'Werk aan de weg' },
+  { href: '#', label: 'Werk en inkomen' },
+  { href: '#', label: 'Wonen en leefomgeving' },
+  { href: '#', label: 'Zorg en ondersteuning' },
+];
 
 const footerLinks = [
   { href: '#', label: 'Over deze site' },
   { href: '#', label: 'Privacy' },
   { href: '#', label: 'Cookies op deze site' },
-]
+];
 
 const socials = [
   { href: 'https://www.amsterdam.nl/nieuws/volg-de-gemeente/nieuwsbrief-amsterdam/', label: 'Nieuwsbrief Amsterdam' },
@@ -29,13 +61,61 @@ const socials = [
   { href: 'https://social.amsterdam.nl/@gemeenteamsterdam', icon: MastodonIcon, label: 'Mastodon' },
   { href: 'https://www.youtube.com/channel/UCEiYFPFR5jGhFakHhbswlig', label: 'YouTube' },
   { href: 'https://werkenbij.amsterdam.nl/', label: 'Werkenbij' },
-]
+];
 
-export default function Amsterdam({ children }) {
+export default function Amsterdam() {
   return (
     <div className="ams-theme">
       <Page>
-        {children}
+        <Grid>
+          <Grid.Cell span="all">
+            <SkipLink href="#main">Direct naar inhoud</SkipLink>
+          </Grid.Cell>
+        </Grid>
+
+        <PageHeader
+          menuItems={[
+            <PageHeader.MenuLink href="https://mijn.amsterdam.nl/" key={1} rel="external">
+              Mijn Amsterdam
+            </PageHeader.MenuLink>,
+            <PageHeader.MenuLink href="#" key={2} lang="en">
+              English
+            </PageHeader.MenuLink>,
+            <PageHeader.MenuLink href="/amsterdam/zoeken" key={3} fixed>
+              Zoeken
+            </PageHeader.MenuLink>,
+          ]}
+          logoLinkTitle="Naar de homepage van gemeente Amsterdam"
+        >
+          <Grid paddingBottom="2x-large" paddingTop="large">
+            <PageHeader.GridCellNarrowWindowOnly span="all">
+              <LinkList>
+                <LinkList.Link href="https://mijn.amsterdam.nl/" rel="external">
+                  Mijn Amsterdam
+                </LinkList.Link>
+                <LinkList.Link href="#" lang="en">
+                  English
+                </LinkList.Link>
+              </LinkList>
+            </PageHeader.GridCellNarrowWindowOnly>
+            <Grid.Cell span="all">
+              <div className="ams-mega-menu__columns">
+                <LinkList>
+                  {megaMenuLinks.map(({ href, label }) => (
+                    <LinkList.Link href={href} key={label}>
+                      {label}
+                    </LinkList.Link>
+                  ))}
+                </LinkList>
+              </div>
+            </Grid.Cell>
+          </Grid>
+        </PageHeader>
+
+        <main id="main">
+          <Outlet />
+        </main>
+
         <PageFooter>
           <PageFooter.Spotlight>
             <Grid gapVertical="2x-large" paddingVertical="x-large">
@@ -111,16 +191,14 @@ export default function Amsterdam({ children }) {
           </Heading>
           <PageFooter.Menu>
             {footerLinks.map(({ href, label }) => (
-              <NextLink href={href} key={label} legacyBehavior passHref>
-                <PageFooter.MenuLink>{label}</PageFooter.MenuLink>
-              </NextLink>
+              <PageFooter.MenuLink href={href} key={label}>
+                {label}
+              </PageFooter.MenuLink>
             ))}
-            <NextLink href="/" legacyBehavior passHref>
-              <PageFooter.MenuLink>Prototypes</PageFooter.MenuLink>
-            </NextLink>
+            <PageFooter.MenuLink href="/">Prototypes</PageFooter.MenuLink>
           </PageFooter.Menu>
         </PageFooter>
       </Page>
     </div>
-  )
+  );
 }
