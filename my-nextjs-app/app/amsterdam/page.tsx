@@ -11,6 +11,7 @@ import {
   Paragraph,
   SearchField,
   Spotlight,
+  StandaloneLink,
 } from '@amsterdam/design-system-react'
 import NextImage from 'next/image'
 import NextLink from 'next/link'
@@ -83,10 +84,18 @@ function HomePage() {
 
   return (
     <>
+      <Heading level={1} className="ams-visually-hidden">
+        Homepage Gemeente Amsterdam
+      </Heading>
       {isAlertVisible && (
-        <Grid>
+        <Grid paddingTop="large" paddingBottom="2x-large">
           <Grid.Cell span="all">
-            <Alert className="ams-mb--md" closeable onClose={() => setIsAlertVisible(false)}>
+            <Alert
+              closeable
+              heading="Stadsloketten sluiten op Koningsdag"
+              headingLevel={2}
+              onClose={() => setIsAlertVisible(false)}
+            >
               <Paragraph>
                 Tijdens Koningsdag zijn alle Stadsloketten gesloten. Lorem ipsum dolor sit amet, consectetur adipisicing
                 elit. Aliquid aspernatur modi, omnis quam vitae. Ook 14 020 en alle andere telefoonnummers van de
@@ -97,7 +106,11 @@ function HomePage() {
         </Grid>
       )}
       <Overlap>
-        <NextImage alt="" className="ams-image ams-aspect-ratio--2x-wide" src={vindenImage} />
+        <NextImage
+          alt=""
+          className="ams-image ams-aspect-ratio-16-5"
+          src={vindenImage}
+        />
         <Grid style={{ alignSelf: 'center' }}>
           <Grid.Cell span={{ medium: 6, narrow: 4, wide: 8 }} start={{ medium: 2, narrow: 1, wide: 3 }}>
             <SearchField onSubmit={() => {}}>
@@ -107,76 +120,82 @@ function HomePage() {
           </Grid.Cell>
         </Grid>
       </Overlap>
-      <Grid paddingVertical="medium">
+      <Grid paddingVertical="x-large">
         <Grid.Cell span="all">
-          <Heading>Meest bezocht</Heading>
+          <Heading level={2} size="level-1">
+            Meest bezocht
+          </Heading>
         </Grid.Cell>
         {topTasks.map(({ title, description }) => (
           <Grid.Cell span={{ narrow: 4, medium: 4, wide: 3 }} key={title}>
             <Card>
-              <Heading level={3} size="level-4">
+              <Card.Heading level={3} size="level-4">
                 <Card.Link href="#">{title}</Card.Link>
-              </Heading>
-              <Paragraph size="small">{description}</Paragraph>
+              </Card.Heading>
+              <Paragraph>{description}</Paragraph>
             </Card>
           </Grid.Cell>
         ))}
       </Grid>
-      <Spotlight color="purple">
-        <Grid paddingVertical="medium">
+      <Spotlight>
+        <Grid paddingVertical="x-large">
           <Grid.Cell span={{ narrow: 4, medium: 4, wide: 6 }}>
-            <Heading inverseColor style={{ marginBlockEnd: '1.5rem' }} size="level-2">
+            <Heading className="ams-mb-s" color="inverse" level={2}>
               Ontheffing of vergunning
             </Heading>
-            <Paragraph inverseColor size="small" style={{ marginBlockEnd: '1.5rem' }}>
+            <Paragraph className="ams-mb-m" color="inverse" size="small">
               Check welke ontheffing of vergunning u nodig heeft. Bijvoorbeeld een RVV, TVM, objectvergunning,{' '}
               nachtwerkontheffing, e-RVV, e-TVM of filmmelding. Dat regult u allemaal met 1 formulier.
             </Paragraph>
-            <Link href="#" inverseColor variant="standalone">
+            <StandaloneLink color="inverse" href="#">
               Eenvoudig regelen
-            </Link>
+            </StandaloneLink>
           </Grid.Cell>
           <Grid.Cell span={{ narrow: 4, medium: 4, wide: 6 }}>
-            <Heading inverseColor style={{ marginBlockEnd: '1.5rem' }} size="level-2">
+            <Heading className="ams-mb-s" color="inverse" level={2}>
               Werkzaamheden
             </Heading>
-            <Paragraph inverseColor lang="la" size="small" style={{ marginBlockEnd: '1.5rem' }}>
+            <Paragraph className="ams-mb-m" color="inverse" lang="la" size="small">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores beatae cumque deleniti exercitationem
               facere fugiat laudantium libero magnam mollitia nisi, omnis pariatur preferendis.
             </Paragraph>
-            <Link href="#" inverseColor variant="standalone">
+            <StandaloneLink color="inverse" href="#">
               Alle bouw- en verkeerswerkzaamheden
-            </Link>
+            </StandaloneLink>
           </Grid.Cell>
         </Grid>
       </Spotlight>
-      <Grid paddingVertical="medium">
+      <Grid paddingTop="x-large" paddingBottom="2x-large">
         <Grid.Cell span={3}>
-          <Heading className="ams-mb--sm">Kalender</Heading>
+          <Heading className="ams-mb-xl" level={2} size="level-1">
+            Kalender
+          </Heading>
           <Column>
             {calenderItems.map(({ date, description, time }) => (
               <Card key={date}>
-                <Heading level={2} size="level-4">
+                <Card.Heading level={3} size="level-4">
                   <Card.Link href="#">{date}</Card.Link>
-                </Heading>
-                <Paragraph size="small">{description}</Paragraph>
+                </Card.Heading>
+                <Paragraph>{description}</Paragraph>
                 <Paragraph size="small">{time}</Paragraph>
               </Card>
             ))}
           </Column>
         </Grid.Cell>
         <Grid.Cell span={{ narrow: 4, medium: 5, wide: 8 }} start={{ narrow: 1, medium: 4, wide: 5 }}>
-          <Heading className="ams-mb--sm">Nieuws</Heading>
+          <Heading className="ams-mb-xl" level={2} size="level-1">
+            Nieuws
+          </Heading>
           <Card>
-            <NextImage alt="" className="ams-image" src={stormschadeImage} />
+            <NextImage alt="" className="ams-image ams-card__image" src={stormschadeImage} />
             <Card.HeadingGroup tagline="Nieuws">
-              <Heading level={2} size="level-4">
+              <Card.Heading level={3} size="level-4">
                 <NextLink href="/amsterdam/nieuws" legacyBehavior passHref>
                   <Card.Link>Waar u stormschade kunt melden</Card.Link>
                 </NextLink>
-              </Heading>
+              </Card.Heading>
             </Card.HeadingGroup>
-            <Paragraph size="small">
+            <Paragraph>
               Storm Poly raasde woensdag 5 juli over de stad. Het zal in sommige gevallen nog enkele dagen duren voordat
               alle schade is opgeruimd. U kunt een melding doen van afgebroken takken, andere stormschade of
               wateroverlast.
@@ -186,13 +205,13 @@ function HomePage() {
         {cards.map(({ heading, image }) => (
           <Grid.Cell span={4} key={heading}>
             <Card>
-              <NextImage alt="" className="ams-image" src={image} />
+              <NextImage alt="" className="ams-image ams-card__image" src={image} />
               <Card.HeadingGroup tagline="Nieuws">
-                <Heading level={2} size="level-4">
+                <Card.Heading level={3} size="level-4">
                   <NextLink href="/amsterdam/nieuws" legacyBehavior passHref>
                     <Card.Link>{heading}</Card.Link>
                   </NextLink>
-                </Heading>
+                </Card.Heading>
               </Card.HeadingGroup>
             </Card>
           </Grid.Cell>

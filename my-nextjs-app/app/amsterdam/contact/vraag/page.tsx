@@ -26,15 +26,15 @@ function Question() {
   }
 
   return (
-    <Grid paddingBottom="medium">
+    <Grid paddingBottom="x-large">
       <Grid.Cell span={{ narrow: 4, medium: 6, wide: 8 }} start={{ narrow: 1, medium: 2, wide: 3 }}>
         <Breadcrumb>
           <NextLink href="/amsterdam" legacyBehavior passHref>
             <Breadcrumb.Link>Home</Breadcrumb.Link>
           </NextLink>
         </Breadcrumb>
-        <form className="ams-gap--md" onSubmit={handleSubmit}>
-          <Heading>Contact</Heading>
+        <form className="ams-gap-l" onSubmit={handleSubmit}>
+          <Heading level={1}>Contact</Heading>
           <Field>
             <Label htmlFor="body">Wat wilt u aan de gemeente vragen?</Label>
             <Paragraph id="bodyDescription" size="small">
