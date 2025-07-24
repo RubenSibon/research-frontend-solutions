@@ -1,5 +1,5 @@
 {
-  "name": "my-react-router-app",
+  "name": "my-react-router-app-spa",
   "private": true,
   "type": "module",
   "scripts": {
@@ -17,7 +17,7 @@
     "@react-router/node": "^7.7.0",
     "@react-router/serve": "^7.7.0",
     "clsx": "^2.1.1",
-    "isbot": "^5.1.28",
+    "isbot": "^5.1.27",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-hook-form": "^7.60.0",
@@ -25,13 +25,11 @@
   },
   "devDependencies": {
     "@react-router/dev": "^7.7.0",
-    "@types/node": "^20.19.9",
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.6",
+    "@types/node": "^20",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
     "typescript": "^5.8.3",
-    "vite": "^5.4.19",
+    "vite": "^6.3.3",
     "vite-tsconfig-paths": "^5.1.4"
   },
   "packageManager": "pnpm@10.13.1+sha512.37ebf1a5c7a30d5fabe0c5df44ee8da4c965ca0c5af3dbab28c3a1681b70a256218d05c81c9c0dcf767ef6b8551eb5b960042b9ed4300c59242336377e01cfad"
